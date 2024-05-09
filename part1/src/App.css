@@ -2,5 +2,24 @@
   max-width: 1280px;
   margin: 0 auto;
   text-align: center;
-  max-height: 780px;
+  max-height: 680px;
+}
+
+.leaflet-container {
+  height: 300px;
+  width: 100%;
+}
+
+#map_container {
+  height: 300px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.leaflet-container.leaflet-touch-drag.leaflet-touch-zoom {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }

@@ -13,7 +13,7 @@ function MyWardrobe(props) {
   const [selectedItem, setSelectedItem] = useState(null); // מזהה של הפריט הנבחר לצורך פתיחת הפופאפ
   const [favorites, setFavorites] = useState([]); // סטייט לאייקונים מועדפים
   const [filteredClothes, setFilteredClothes] = useState(props.clothes);
-
+  //localStorage.clear();
   // לחיצה על ה+
   const togglePopup = (index) => {
     if (selectedItem === index) {
@@ -74,7 +74,12 @@ function MyWardrobe(props) {
                 {/* תצוגת הפופאפ רק עבור הפריט שנבחר */}
                 {selectedItem === index && (
                   <div className="popup">
-                    <Link to="/createad">
+                    <Link
+                      to={{
+                        pathname: `/createad/${item.id}`,
+                        search: `choosenItem=${encodeURIComponent(JSON.stringify({ ...item }))}`,
+                      }}
+                    >
                       <button>
                         <CiExport className="del_sale_icon" /> For sale
                       </button>

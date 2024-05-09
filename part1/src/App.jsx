@@ -6,6 +6,8 @@ import LogIn from '../Comps/LogIn'
 import Register from '../Comps/Register'
 import MyWardrobe from '../Comps/MyWardrobe'
 import CreateAd from '../Comps/CreateAd'
+import Map from '../Comps/Map'
+import Ad from '../Comps/Ad'
 
 function App() {
 
@@ -29,7 +31,9 @@ function App() {
         <Route path='/login' element={<LogIn />}></Route>
         <Route path='/register' element={<Register />}></Route>
         <Route path='/mywordrobe' element={<MyWardrobe clothes={userClothes} />}></Route>
-        <Route path='/createad' element={<CreateAd />}></Route>
+        <Route path='/createad/:item' element={<CreateAd />}></Route>
+        <Route path='/map' element={<Map />}></Route>
+        <Route path='/ad' element={<Ad />}></Route>
       </Routes>
     </>
   )
