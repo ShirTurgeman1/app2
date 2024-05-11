@@ -6,6 +6,7 @@ import { MdDeleteForever } from "react-icons/md";
 import { Link } from "react-router-dom";
 
 import "../src/CSSc/MyWordrobe.css";
+import "../src/CSSc/WardrobeFilters.css";
 import NaviBarFooter from "./NaviBarFooter";
 import WardrobeFilters from "./WardrobeFilters";
 
@@ -13,7 +14,7 @@ function MyWardrobe(props) {
   const [selectedItem, setSelectedItem] = useState(null); // מזהה של הפריט הנבחר לצורך פתיחת הפופאפ
   const [favorites, setFavorites] = useState([]); // סטייט לאייקונים מועדפים
   const [filteredClothes, setFilteredClothes] = useState(props.clothes);
-  //localStorage.clear();
+
   // לחיצה על ה+
   const togglePopup = (index) => {
     if (selectedItem === index) {

@@ -8,6 +8,7 @@ import MyWardrobe from '../Comps/MyWardrobe'
 import CreateAd from '../Comps/CreateAd'
 import Map from '../Comps/Map'
 import Ad from '../Comps/Ad'
+import MarketPlace from '../Comps/MarketPlace'
 
 function App() {
 
@@ -24,6 +25,11 @@ function App() {
     { id: 10, image: '/Images/kolav.png', name: 'Jeans', color: 'black', brand: 'Brand B' , phone: '0521234567' , price: 100},
   ];
 
+  const allAds = [
+    { id: 1, price: 10, address: "bialik, hod hasharon", condition: "New", photo: '/Images/kolav.png', color: "pink", name: "Shirt", phone: "0527827133"},
+    { id: 2, price: 20, address: "nahal sorek, modi'in", condition: "Used", photo: '/Images/lookalike.png', color: "red", name: "Top", phone: "0527827134"},
+  ]
+
   return (
     <>
       <Routes>
@@ -34,6 +40,7 @@ function App() {
         <Route path='/createad/:item' element={<CreateAd />}></Route>
         <Route path='/map' element={<Map />}></Route>
         <Route path='/ad' element={<Ad />}></Route>
+        <Route path='/marketplace' element={<MarketPlace ads={allAds} />}></Route>
       </Routes>
     </>
   )

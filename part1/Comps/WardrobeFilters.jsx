@@ -11,9 +11,6 @@ export default function WardrobeFilters({ clothes, setFilteredClothes }) {
     } else {
       const filteredItems = clothes.filter((item) => item.name === filter);
       setFilteredClothes(filteredItems);
-      //console.log({clothes});
-      //console.log({filteredItems});
-      //console.log(clothes.filter((item) => item.name === filter));
     }
   };
 

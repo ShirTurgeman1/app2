@@ -14,7 +14,7 @@ export default function FirstPage() {
             <button style={{backgroundColor: 'black', width: 200, color: 'white'}}>Sign up</button>
         </Link>
         <Link to="/mywordrobe" style={{display: 'block', margin: 10}}>My Wardrobe</Link>
-        <Link to="/map" style={{display: 'block', margin: 10}}>Map</Link>
+        <Link to="/marketplace">Market Place</Link>
     </div>
   );
 }

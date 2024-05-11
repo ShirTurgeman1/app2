@@ -16,34 +16,35 @@ function CreateAd() {
   const choosenItem = JSON.parse(
     decodeURIComponent(searchParams.get("choosenItem"))
   );
-  //console.log(choosenItem);
-  //console.log(choosenItem.image);
+
   let photo = choosenItem.image;
   let color = choosenItem.color;
   let name = choosenItem.name;
   let phone = choosenItem.phone;
-  //console.log(photo);
 
-  const [price, setPrice] = useState("");
-  const [address, setAddress] = useState("");
-  const [condition, setCondition] = useState("like new");
+  const [ad, setAd] = useState({
+    price: "",
+    address: "",
+    condition: "New",
+  });
+
   const [showModal, setShowModal] = useState(false);
   const [isAddressOk, setIsAddressOk] = useState(true);
   const navigateTo = useNavigate();
 
   function handleSubmit() {
-    if (!price || !address || !condition) {
+    if (!ad.price || !ad.address || !ad.condition) {
       setShowModal(true);
       return;
     } else {
       // Validate address format
       const addressPattern = /^[a-zA-Z0-9\s]+,[\s]+[a-zA-Z\s]+$/; // English address, comma, space, English address
-      if (!addressPattern.test(address)) {
+      if (!addressPattern.test(ad.address)) {
         setIsAddressOk(false);
         return;
       }
       navigateTo("/ad", {
-        state: { price, address, condition, photo, color, name, phone },
+        state: { ...ad, photo, color, name, phone },
       });
     }
   }
@@ -65,8 +66,8 @@ function CreateAd() {
               type="number"
               id="price"
               name="price"
-              value={price}
-              onChange={(e) => setPrice(e.target.value)}
+              value={ad.price}
+              onChange={(e) => setAd({ ...ad, price: e.target.value })}
             />
           </div>
           <div className="input-group">
@@ -75,9 +76,9 @@ function CreateAd() {
               type="text"
               id="address"
               name="address"
-              value={address}
+              value={ad.address}
               placeholder="Street, city"
-              onChange={(e) => setAddress(e.target.value)}
+              onChange={(e) => setAd({ ...ad, address: e.target.value })}
             />
           </div>
           {isAddressOk === false && (
@@ -94,8 +95,8 @@ function CreateAd() {
             <select
               id="condition"
               name="condition"
-              value={condition}
-              onChange={(e) => setCondition(e.target.value)}
+              value={ad.condition}
+              onChange={(e) => setAd({ ...ad, condition: e.target.value })}
             >
               <option value="new">New</option>
               <option value="like new">Like New</option>
