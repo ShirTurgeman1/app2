@@ -17,10 +17,14 @@ function CreateAd() {
     decodeURIComponent(searchParams.get("choosenItem"))
   );
 
+  console.log("1")
+  console.log(choosenItem)
+  console.log("1")
+
   let photo = choosenItem.image;
-  let color = choosenItem.color;
+  let color = "red";
   let name = choosenItem.name;
-  let phone = choosenItem.phone;
+  let phone = "0527827133";
 
   const [ad, setAd] = useState({
     price: "",
@@ -58,7 +62,7 @@ function CreateAd() {
             <img src={choosenItem.image} alt={choosenItem.name} />
           </div>
           <h2>
-            {choosenItem.color.toUpperCase()} {choosenItem.name.toUpperCase()}
+            {choosenItem.color} {choosenItem.name.toUpperCase()}
           </h2>
           <div className="input-group">
             <label htmlFor="price">Price:</label>

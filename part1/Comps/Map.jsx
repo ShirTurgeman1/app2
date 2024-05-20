@@ -33,7 +33,7 @@ const Map = (props) => {
   console.log(position)
 
   return (
-    <div id="map_container" style={{ height: '100px', width: '330px' }}>
+    <div id="map_container" style={{ height: '100px', width: '250px' }}>
       {position && (
         <MapContainer center={position} zoom={13} style={{ height: '100%', width: '100%' }}>
           <TileLayer

@@ -18,17 +18,18 @@
     text-align: center;
 }
 
-.ad-form .image-container {
-    max-width: 100%;
-    overflow: hidden;
-    border-radius: 10px;
-}
-
 .ad-form .image-container img {
-    width: 180px;
-    height: 180px;
+    width: 100%;
+    height: auto;
+    /* שמירה על הפרופורציות של התמונה */
+    max-width: 100%;
+    /* גודל מקסימלי לרוחב */
+    max-height: 200px;
+    /* גודל מקסימלי לגובה, לדוגמה */
     display: block;
-    margin: 0 auto;
+    margin-bottom: 10px;
+    object-fit: contain;
+    /* שמירה על הפרופורציות בתוך הגודל המוגדר */
 }
 
 .ad-form .ad-content h2 {
